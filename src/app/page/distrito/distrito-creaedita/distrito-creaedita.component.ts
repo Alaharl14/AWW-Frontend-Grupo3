@@ -1,7 +1,10 @@
+import { CiudadService } from './../../../service/ciudad.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Distrito } from 'src/app/model/distrito';
 import { DistritoService } from 'src/app/service/distrito.service';
+import { Ciudad } from 'src/app/model/ciudad';
+import { CiudadService } from 'src/app/service/ciudad.service';
 
 @Component({
   selector: 'app-distrito-creaedita',
@@ -14,9 +17,11 @@ export class DistritoCreaeditaComponent implements OnInit {
   edicion: boolean = false;
   id: number = 0;
   mensaje1: string = "";
+  listaCiudades: Ciudad[] = [];
+  idCiudadSeleccionado: number = 0;
 
   constructor(private distritoService: DistritoService,private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,private ciudadService:CiudadService) { }
 
     ngOnInit(): void {
       this.route.params.subscribe((data: Params) => {
@@ -24,10 +29,15 @@ export class DistritoCreaeditaComponent implements OnInit {
         this.edicion = data['id'] != null;
         this.init();
       });
+    this.ciudadService.listar().subscribe(data => { this.listaCiudades = data });
+
     }
 
     aceptar(): void {
-      if (this.distrito.nombreDistrito.length > 0 ) { 
+      if (this.distrito.nombreDistrito.length > 0 && this.idCiudadSeleccionado>0) {
+        let c = new Ciudad();
+        c.idCiudad = this.idCiudadSeleccionado;
+        this.distrito.ciudad = c; 
         if (this.edicion) {
           this.distritoService.modificar(this.distrito).subscribe(() => {
             this.distritoService.listar().subscribe(data => {
@@ -55,6 +65,7 @@ export class DistritoCreaeditaComponent implements OnInit {
         this.distritoService.listarId(this.id).subscribe(data => {
           this.distrito = data;
           console.log(data);
+          this.idCiudadSeleccionado = data.ciudad.idCiudad;
         })
       }
   

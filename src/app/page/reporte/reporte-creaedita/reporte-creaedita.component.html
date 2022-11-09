@@ -1,0 +1,32 @@
+<div class="container">
+<br>
+    <h1>Reporte</h1>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="Id" [(ngModel)]="reporte.idReporte">
+    </mat-form-field>
+  
+    <br>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput required placeholder="nombre" [(ngModel)]="reporte.nombreReporte">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input matInput required placeholder="descripcion" [(ngModel)]="reporte.descripcionReporte">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Fecha</mat-label>
+      <input matInput required placeholder="fecha" [(ngModel)]="reporte.fechaReporte">
+    </mat-form-field>
+  
+    <br>
+    <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/reporte">Cancelar</button>
+    <p>{{mensaje1}}</p>
+  
+  </div>

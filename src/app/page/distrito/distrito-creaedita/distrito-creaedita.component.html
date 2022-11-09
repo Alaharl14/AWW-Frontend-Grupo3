@@ -1,0 +1,24 @@
+<div class="container">
+  <br>
+    <div class="example-full-width">
+      <h1>Distrito</h1>
+    </div>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="Id" [(ngModel)]="distrito.idDistrito">
+    </mat-form-field>
+  
+    <br>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput required placeholder="nombre" [(ngModel)]="distrito.nombreDistrito">
+    </mat-form-field>
+  
+    <br>
+    <button class="buttons" mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/distrito">Cancelar</button>
+    <p>{{mensaje1}}</p>
+  
+  </div>

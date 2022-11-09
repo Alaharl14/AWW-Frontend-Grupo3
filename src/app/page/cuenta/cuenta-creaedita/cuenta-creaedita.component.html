@@ -39,7 +39,17 @@
         <mat-label>Direccion</mat-label>
         <input matInput required placeholder="direccion" [(ngModel)]="cuenta.direccionCuenta">
       </mat-form-field>
-    
+      
+      <br>
+      <mat-form-field appearance="fill">
+      <mat-label>Seleccione Distrito</mat-label>
+      <mat-select [(value)]="idDistritoSeleccionado" required>
+          <mat-option *ngFor="let d of listaDistritos" [value]="d.idDistrito">
+              {{d.nombreDistrito}}
+          </mat-option>
+      </mat-select>
+      </mat-form-field>
+
       <br>
       <button class="buttons" mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
       <button mat-raised-button color="warn" routerLink="/cuenta">Cancelar</button>

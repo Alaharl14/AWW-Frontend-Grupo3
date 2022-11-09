@@ -13,7 +13,7 @@ import { ObjetoDialogoComponent } from './objeto-dialogo/objeto-dialogo.componen
 export class ObjetoListarComponent implements OnInit {
   lista: Objeto[] = [];
   dataSource: MatTableDataSource<Objeto> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','distancia','distanciaLimite','ubicacion','fecha','acciones'];
+  displayedColumns:string[]=['id','nombre','distancia','distanciaLimite','ubicacion','fecha','cuenta','recordatorio','categoria','estado','acciones'];
   private idMayor: number = 0;
   constructor(private objetoService: ObjetoService, private dialog: MatDialog) { }
 

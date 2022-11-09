@@ -13,7 +13,7 @@ import { CuentaDialogoComponent } from './cuenta-dialogo/cuenta-dialogo.componen
 export class CuentaListarComponent implements OnInit {
   lista: Cuenta[] = [];
   dataSource: MatTableDataSource<Cuenta> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','contrasena','correo','numero','direccion','acciones'];
+  displayedColumns:string[]=['id','nombre','contrasena','correo','numero','direccion','distrito','acciones'];
   private idMayor: number = 0;
 
   constructor(private cuentaService: CuentaService, private dialog: MatDialog) { }

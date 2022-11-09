@@ -13,7 +13,7 @@ import { DistritoDialogoComponent } from './distrito-dialogo/distrito-dialogo.co
 export class DistritoListarComponent implements OnInit {
   lista: Distrito[] = [];
   dataSource: MatTableDataSource<Distrito> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','acciones'];
+  displayedColumns:string[]=['id','nombre','ciudad','acciones'];
   private idMayor: number = 0;
   constructor(private distritoService: DistritoService, private dialog: MatDialog) { }
 

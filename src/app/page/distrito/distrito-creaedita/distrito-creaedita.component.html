@@ -15,6 +15,17 @@
       <mat-label>Nombre</mat-label>
       <input matInput required placeholder="nombre" [(ngModel)]="distrito.nombreDistrito">
     </mat-form-field>
+
+    <br>
+    
+    <mat-form-field appearance="fill">
+    <mat-label>Seleccione Ciudad</mat-label>
+    <mat-select [(value)]="idCiudadSeleccionado" required>
+        <mat-option *ngFor="let c of listaCiudades" [value]="c.idCiudad">
+            {{c.nombreCiudad}}
+        </mat-option>
+    </mat-select>
+    </mat-form-field>
   
     <br>
     <button class="buttons" mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>

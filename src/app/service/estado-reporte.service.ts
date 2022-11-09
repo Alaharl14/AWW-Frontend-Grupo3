@@ -7,7 +7,7 @@ import { EstadoReporte } from '../model/estadoReporte';
   providedIn: 'root'
 })
 export class EstadoReporteService {
-  url: string = "http://localhost:8080/estadoreporte"
+  url: string = "https://aww-backend-grupo3.herokuapp.com/estadoreporte"
   private listaCambio = new Subject<EstadoReporte[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }

@@ -7,7 +7,7 @@ import { Cuenta } from './../model/cuenta';
   providedIn: 'root'
 })
 export class CuentaService {
-  url: string = "http://localhost:8080/cuenta"
+  url: string = "https://aww-backend-grupo3.herokuapp.com/cuenta"
   private listaCambio = new Subject<Cuenta[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }

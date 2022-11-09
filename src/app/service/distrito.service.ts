@@ -7,7 +7,7 @@ import { Distrito } from '../model/distrito';
   providedIn: 'root'
 })
 export class DistritoService {
-  url: string = "http://localhost:8080/distrito"
+  url: string = "https://aww-backend-grupo3.herokuapp.com/distrito"
   private listaCambio = new Subject<Distrito[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }

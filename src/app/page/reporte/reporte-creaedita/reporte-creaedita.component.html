@@ -23,6 +23,26 @@
       <mat-label>Fecha</mat-label>
       <input matInput required placeholder="fecha" [(ngModel)]="reporte.fechaReporte">
     </mat-form-field>
+    
+    <br>
+    <mat-form-field appearance="fill">
+    <mat-label>Seleccione Objeto</mat-label>
+    <mat-select [(value)]="idObjetoSeleccionado" required>
+        <mat-option ngFor="let ob of listaObjetos" [value]="ob.idObjeto">
+            {{ob.nombreObjeto}}
+        </mat-option>
+    </mat-select>
+    </mat-form-field>
+
+    <br>
+    <mat-form-field appearance="fill">
+    <mat-label>Seleccione Estado Reporte</mat-label>
+    <mat-select [(value)]="idEstadoReporteSeleccionado" required>
+        <mat-optionngFor="let est of listaEstadoReporte" [value]="est.idEstadoReporte">
+            {{est.nombreEstadoReporte}}
+        </mat-option>
+    </mat-select>
+    </mat-form-field>
   
     <br>
     <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>

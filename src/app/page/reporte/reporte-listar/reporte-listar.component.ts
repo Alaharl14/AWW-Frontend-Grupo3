@@ -13,7 +13,7 @@ import { ReporteDialogoComponent } from './reporte-dialogo/reporte-dialogo.compo
 export class ReporteListarComponent implements OnInit {
   lista: Reporte[] = [];
   dataSource: MatTableDataSource<Reporte> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','descripcion','fecha','acciones'];
+  displayedColumns:string[]=['id','nombre','descripcion','fecha','objeto','estado','acciones'];
   private idMayor: number = 0;
   constructor(private ps: ReporteService, private dialog: MatDialog) { }
 
